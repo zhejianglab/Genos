@@ -1,0 +1,14 @@
+FROM pub-registry1.metax-tech.com/ai-opentest/release/maca/vllm-metax:0.11.0-maca.ai3.3.0.6-torch2.6-py310-ubuntu22.04-amd64
+
+# Install the necessary dependencies
+RUN ./etc/profile.d/conda.sh && \
+    pip install sanic
+
+COPY genos_server.py /workspace/genos_server.py
+WORKDIR /workspace/
+
+# Exposed port
+EXPOSE 8000
+
+# Start Service
+CMD ["python", "genos_server.py"]
