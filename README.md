@@ -10,6 +10,9 @@
   <a href="https://huggingface.co/ZhejiangLab/Genos" target="_blank">
       <img alt="Hugging Face" src="https://img.shields.io/badge/🤗%20Hugging%20Face-Genos%20-ffc107"/>
   </a>
+  <a href="https://modelscope.cn/collections/zhejianglab/Genos" target="_blank">
+      <img alt="modelscope" src="https://img.shields.io/badge/🤖%20ModelScope-Genos-FFC0CB"/>
+  </a>
   <a href="https://cloud.stomics.tech/#/inferance-web?type=model" target="_blank">
       <img alt="DCS" src="https://img.shields.io/badge/☁️%20DCS-Inference Services%20-6f42c1"/>
   </a>
@@ -188,15 +191,15 @@ docker run -it --gpus all --shm-size 32g zjlabgenos/mega:v1 /bin/bash
 ```
 
 ### Model Download
-Genos models are available for download from [Hugging Face](https://huggingface.co/ZhejiangLab). Each model employs a hybrid Mixture-of-Experts (MoE) architecture and supports analysis at single-nucleotide resolution.
+Genos models are available for download from [Hugging Face](https://huggingface.co/collections/ZhejiangLab/genos) and [ModelScope](https://modelscope.cn/collections/zhejianglab/Genos). Each model employs a hybrid Mixture-of-Experts (MoE) architecture and supports analysis at single-nucleotide resolution.
 
 <div align="center">
 
-| **Model** | **Total Params** | **Hugging Face** | **Megatron ckpt** |
-|:---------:|:----------------:|:----------------:|:--------------:|
-| Genos-1.2B | 1.2B | [🤗 Hugging Face](https://huggingface.co/ZhejiangLab/Genos-1.2B) | [Genos-1.2B](https://huggingface.co/ZhejiangLab/Genos-Megatron-1.2B) | 
-| Genos-10B | 10B | [🤗 Hugging Face](https://huggingface.co/ZhejiangLab/Genos-10B) | [Genos-10B](https://huggingface.co/ZhejiangLab/Genos-Megatron-10B)  | 
-| Genos-10B-v2 | 10B | [🤗 Hugging Face](https://huggingface.co/ZhejiangLab/Genos-10B-v2) | [Genos-10B-v2](https://huggingface.co/ZhejiangLab/Genos-Megatron-10B-v2)  | 
+| **Model** | **Total Params** | **Hugging Face** | **ModelScope** | **Megatron ckpt** |
+|:---------:|:----------------:|:----------------:|:--------------:|:--------------:|
+| Genos-1.2B | 1.2B | [🤗 Hugging Face](https://huggingface.co/ZhejiangLab/Genos-1.2B) |[🤖 ModelScope](https://modelscope.cn/models/zhejianglab/Genos-1.2B) | [Genos-1.2B](https://huggingface.co/ZhejiangLab/Genos-Megatron-1.2B) | 
+| Genos-10B | 10B | [🤗 Hugging Face](https://huggingface.co/ZhejiangLab/Genos-10B) |[🤖 ModelScope](https://modelscope.cn/models/zhejianglab/Genos-10B) | [Genos-10B](https://huggingface.co/ZhejiangLab/Genos-Megatron-10B)  | 
+| Genos-10B-v2 | 10B | [🤗 Hugging Face](https://huggingface.co/ZhejiangLab/Genos-10B-v2) |[🤖 ModelScope](https://modelscope.cn/models/zhejianglab/Genos-1.2B) | [Genos-10B-v2](https://huggingface.co/ZhejiangLab/Genos-Megatron-10B-v2)  | 
 
 </div>
 
