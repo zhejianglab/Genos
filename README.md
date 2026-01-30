@@ -26,6 +26,7 @@
 </div>
 
 ## News
+- **2026.1.30 |** We released [Gengram](https://github.com/zhejianglab/Gengram) — a retrieval-augmented genomic foundation model featuring explicit motif memory, efficient hash-based k-mer lookup, and enhanced biological interpretability. 🚀 Explore it and see how it transforms genomic modeling！
 - **2025.12.25 |** We added [NTv3-650M-Pre](https://huggingface.co/InstaDeepAI/NTv3_650M_pre) as a new competitor model in the [Performance Evaluation](#3-performance-evaluation) section. Stay tuned to see how it performs against our Genos-10B-v2 model!    
 - **2025.12.18 |** We released [Genos-10B-v2](https://huggingface.co/ZhejiangLab/Genos-10B-v2) — featuring expanded multi-species genomic training, stronger cross-species and ultra-long context evaluation, vLLM-accelerated inference, and seamless deployment across Huawei Ascend and MetaX (Muxi) GPUs. 🔗 Explore [Genos-10B-v2](https://huggingface.co/ZhejiangLab/Genos-10B-v2)↗
 - **2025.10.23 |** We released [Genos-1.2B](https://huggingface.co/ZhejiangLab/Genos-1.2B) and [Genos-10B](https://huggingface.co/ZhejiangLab/Genos-10B) models. Go try it out and share your thoughts with us📝!
