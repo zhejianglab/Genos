@@ -1,0 +1,623 @@
+support_dataset:
+  # Genomic_benchmark_dataset
+  - demo_coding_vs_intergenomic_seqs
+  - human_enhancers_cohn
+  - human_enhancers_ensembl
+  - human_nontata_promoters
+  - human_ocr_ensembl
+  # Nucleotide Transformer Benchmark Dataset
+  - promoter_all
+  - promoter_tata
+  - promoter_no_tata
+  - enhancers
+  - enhancers_types
+  - splice_sites_all
+  - splice_sites_acceptors
+  - splice_sites_donors
+  - H3
+  - H4
+  - H3K9ac
+  - H3K14ac
+  - H4ac
+  - H3K4me1
+  - H3K4me2
+  - H3K4me3
+  - H3K36me3
+  - H3K79me3
+  # LRB
+  - regulatory_element_promoter_8K
+  - regulatory_element_enhancer_8K
+  - chromatin_features_histone_marks_8K
+  - chromatin_features_dna_accessibility_8K
+  - variant_effect_causal_eqtl_8K
+  - variant_effect_pathogenic_clinvar_8K
+  - bulk_rna_expression_8K
+  - cage_prediction_8K
+  # Variant Hotspot Dataset
+  - CIMA_1024
+  - CIMA_8192
+  - CIMA_32768
+  - CIMA_131072
+  - CPC_1024
+  - CPC_8192
+  - CPC_32768
+  - CPC_131072
+  - CPC_1024000
+  - HPRC_1024
+  - HPRC_8192
+  - HPRC_32768
+  - HPRC_131072
+  # Self Datasets
+  - BloodType
+
+default_dataset:
+  - demo_coding_vs_intergenomic_seqs
+  - human_enhancers_cohn
+  - human_ocr_ensembl
+  - splice_sites_all
+  - H3
+  - H3K36me3
+  - regulatory_element_promoter_8K
+  - regulatory_element_enhancer_8K
+  # - chromatin_features_histone_marks_8K
+  # - chromatin_features_dna_accessibility_8K
+  - variant_effect_causal_eqtl_8K
+  - variant_effect_pathogenic_clinvar_8K
+  - bulk_rna_expression_8K
+
+
+genomic_benchmark_dataset:
+  - demo_coding_vs_intergenomic_seqs
+  - human_enhancers_cohn
+  - human_ocr_ensembl
+
+nt_benchmark_dataset:
+  - splice_sites_all
+  - H3
+  - H3K36me3
+
+long_sequence_dataset:
+  - BloodType
+  - regulatory_element_promoter_8K
+  - regulatory_element_enhancer_8K
+  - chromatin_features_histone_marks_8K
+  - chromatin_features_dna_accessibility_8K
+  - variant_effect_causal_eqtl_8K
+  - variant_effect_pathogenic_clinvar_8K
+  - bulk_rna_expression_8K
+  - cage_prediction_8K
+  - HPRC_8192
+  - CPC_8192
+  - CIMA_8192
+  - Human_classify_8192
+  - MHC_classify
+  - MHC_classify_2
+  - primate_species_classification_8192
+super_long_sequence_dataset:
+  - HPRC_32768
+  - HPRC_131072
+  - CIMA_32768
+  - CIMA_131072
+  - CPC_32768
+  - CPC_131072
+  - CPC_1024000
+  - Human_classify_32768
+  - Human_classify_131072
+  - primate_species_classification_32768
+  - primate_species_classification_131072
+
+
+dataset_feature:
+  demo_coding_vs_intergenomic_seqs:
+    seq_for_item: 1
+    seq_key: seq
+    label_key: label
+    eval_task: classification
+    data_split: ['train', 'test']
+    sample_num:  100000
+    min_length:  200
+    max_length:  200
+    dataset_ratio:  [0.75, 0.25]
+    label_train_counter:  [(0, 37500), (1, 37500)]
+    label_test_counter:  [(0, 12500), (1, 12500)]
+ 
+  human_enhancers_cohn:
+   seq_for_item: 1
+   seq_key: seq
+   label_key: label
+   eval_task: classification
+   data_split: ['train', 'test']
+   sample_num:  27791
+   min_length:  500
+   max_length:  500
+   dataset_ratio:  [0.75, 0.25]
+   label_train_counter:  [(0, 10421), (1, 10422)]
+   label_test_counter:  [(0, 3474), (1, 3474)]
+ 
+  human_ocr_ensembl:
+   seq_for_item: 1
+   seq_key: seq
+   label_key: label
+   eval_task: classification
+   data_split: ['train', 'test']
+   sample_num:  174756
+   min_length:  71
+   max_length:  593
+   dataset_ratio:  [0.8, 0.2]
+   label_train_counter:  [(0, 69902), (1, 69902)]
+   label_test_counter:  [(0, 17476), (1, 17476)]
+ 
+  splice_sites_all:
+   seq_for_item: 1
+   seq_key: seq
+   label_key: label
+   eval_task: classification
+   data_split: ['train', 'test']
+   sample_num:  30000
+   min_length:  400
+   max_length:  400
+   dataset_ratio:  [0.9, 0.1]
+   label_train_counter:  [(0, 9000), (1, 9000), (2, 9000)]
+   label_test_counter:  [(0, 1000), (1, 1000), (2, 1000)]
+ 
+  H3:
+   seq_for_item: 1
+   seq_key: seq
+   label_key: label
+   eval_task: classification
+   data_split: ['train', 'test']
+   sample_num:  14965
+   min_length:  290
+   max_length:  500
+   dataset_ratio:  [0.9, 0.1]
+   label_train_counter:  [(0, 6568), (1, 6900)]
+   label_test_counter:  [(1, 767), (0, 730)]
+ 
+  H3K36me3:
+   seq_for_item: 1
+   seq_key: seq
+   label_key: label
+   eval_task: classification
+   data_split: ['train', 'test']
+   sample_num:  34880
+   min_length:  310
+   max_length:  500
+   dataset_ratio:  [0.9, 0.1]
+   label_train_counter:  [(1, 17003), (0, 14389)]
+   label_test_counter:  [(1, 1889), (0, 1599)]
+ 
+  regulatory_element_promoter_8K:
+   seq_for_item: 1
+   seq_key: seq
+   label_key: label
+   eval_task: classification
+   data_split: ['train', 'test', 'eval']
+   sample_num:  60000
+   min_length:  8192
+   max_length:  8192
+   dataset_ratio:  [0.49, 0.5, 0.01]
+   label_train_counter:  [(0, 28038), (1, 1409)]
+   label_test_counter:  [(0, 28766), (1, 1234)]
+   label_eval_counter:  [(0, 506), (1, 47)]
+ 
+  regulatory_element_enhancer_8K:
+   seq_for_item: 1
+   seq_key: seq
+   label_key: label
+   eval_task: classification
+   data_split: ['train', 'test', 'eval']
+   sample_num:  60000
+   min_length:  8192
+   max_length:  8192
+   dataset_ratio:  [0.49, 0.5, 0.01]
+   label_train_counter:  [(0, 13992), (1, 15434)]
+   label_test_counter:  [(1, 15525), (0, 14475)]
+   label_eval_counter:  [(0, 248), (1, 326)]
+  
+  chromatin_features_histone_marks_8K:
+   seq_for_item: 1
+   seq_key: seq
+   label_key: label
+   eval_task: labels
+   data_split: ['train', 'test', 'eval']
+   sample_num:  60000
+   min_length:  8192
+   max_length:  8192
+   dataset_ratio:  [0.49, 0.5, 0.01]
+ 
+  chromatin_features_dna_accessibility_8K:
+   seq_for_item: 1
+   seq_key: seq
+   label_key: label
+   eval_task: labels
+   data_split: ['train', 'test', 'eval']
+   sample_num:  60000
+   min_length:  8192
+   max_length:  8192
+   dataset_ratio:  [0.49, 0.5, 0.01]
+
+  variant_effect_causal_eqtl_8K:
+   seq_for_item: 2
+   seq_key: ['ref_seq', 'var_seq']
+   label_key: label
+   eval_task: classification
+   data_split: ['train', 'test', 'eval']
+   sample_num:  38862
+   min_length:  8192
+   max_length:  8192
+   dataset_ratio:  [0.74, 0.23, 0.03]
+   label_train_counter:  [(1, 14262), (0, 14575)]
+   label_test_counter:  [(0, 4306), (1, 4556)]
+   label_eval_counter:  [(0, 475), (1, 688)]
+ 
+  variant_effect_pathogenic_clinvar_8K:
+   seq_for_item: 2
+   seq_key: ['ref_seq', 'var_seq']
+   label_key: label
+   eval_task: classification
+   data_split: ['train', 'test', 'eval']
+   sample_num:  31018
+   min_length:  8192
+   max_length:  8192
+   dataset_ratio:  [0.95, 0.03, 0.02]
+   label_train_counter:  [(0, 12738), (1, 16666)]
+   label_test_counter:  [(1, 461), (0, 557)]
+   label_eval_counter:  [(0, 369), (1, 227)]
+  
+  bulk_rna_expression_8K:
+   seq_for_item: 1
+   seq_key: seq
+   label_key: label
+   eval_task: regression
+   regression_length: 218
+   data_split: ['train', 'test', 'eval']
+   sample_num:  23817
+   min_length:  8192
+   max_length:  8192
+   dataset_ratio:  [0.94, 0.04, 0.02]
+
+  CIMA_1024:
+   seq_for_item: 1
+   seq_key: seq
+   label_key: label
+   eval_task: classification
+   data_split: ['train', 'test', 'eval']
+   sample_num:  251110
+   min_length:  1024
+   max_length:  1024
+   dataset_ratio:  [0.88, 0.11, 0.02]
+   label_train_counter:  [('1', 109888), ('0', 109888)]
+   label_test_counter:  [('1', 13493), ('0', 13493)]
+   label_eval_counter:  [('1', 2174), ('0', 2174)]
+ 
+  CIMA_8192:
+   seq_for_item: 1
+   seq_key: seq
+   label_key: label
+   eval_task: classification
+   data_split: ['train', 'test', 'eval']
+   sample_num:  28962
+   min_length:  8192
+   max_length:  8192
+   dataset_ratio:  [0.88, 0.1, 0.02]
+   label_train_counter:  [('1', 12725), ('0', 12725)]
+   label_test_counter:  [('1', 1506), ('0', 1506)]
+   label_eval_counter:  [('1', 250), ('0', 250)]
+ 
+  CIMA_32768:
+   seq_for_item: 1
+   seq_key: seq
+   label_key: label
+   eval_task: classification
+   data_split: ['train', 'test', 'eval']
+   sample_num:  7116
+   min_length:  32768
+   max_length:  32768
+   dataset_ratio:  [0.88, 0.1, 0.02]
+   label_train_counter:  [('1', 3123), ('0', 3123)]
+   label_test_counter:  [('1', 373), ('0', 373)]
+   label_eval_counter:  [('1', 62), ('0', 62)]
+ 
+  CIMA_131072:
+   seq_for_item: 1
+   seq_key: seq
+   label_key: label
+   eval_task: classification
+   data_split: ['train', 'test', 'eval']
+   sample_num:  1784
+   min_length:  131072
+   max_length:  131072
+   dataset_ratio:  [0.88, 0.11, 0.02]
+   label_train_counter:  [('1', 782), ('0', 782)]
+   label_test_counter:  [('1', 94), ('0', 94)]
+   label_eval_counter:  [('1', 16), ('0', 16)]
+ 
+  CPC_1024:
+   seq_for_item: 1
+   seq_key: seq
+   label_key: label
+   eval_task: classification
+   data_split: ['train', 'test', 'eval']
+   sample_num:  828039
+   min_length:  1024
+   max_length:  1024
+   dataset_ratio:  [0.91, 0.08, 0.01]
+   label_train_counter:  [('1', 499757), ('0', 255776)]
+   label_test_counter:  [('1', 32875), ('0', 32875)]
+   label_eval_counter:  [('1', 3378), ('0', 3378)]
+ 
+  CPC_8192:
+   seq_for_item: 1
+   seq_key: seq
+   label_key: label
+   eval_task: classification
+   data_split: ['train', 'test', 'eval']
+   sample_num:  62729
+   min_length:  8192
+   max_length:  8192
+   dataset_ratio:  [0.94, 0.05, 0.01]
+   label_train_counter:  [('1', 44753), ('0', 14258)]
+   label_test_counter:  [('1', 1596), ('0', 1596)]
+   label_eval_counter:  [('1', 263), ('0', 263)]
+ 
+  CPC_32768:
+   seq_for_item: 1
+   seq_key: seq
+   label_key: label
+   eval_task: classification
+   data_split: ['train', 'test', 'eval']
+   sample_num:  15391
+   min_length:  32768
+   max_length:  32768
+   dataset_ratio:  [0.94, 0.05, 0.01]
+   label_train_counter:  [('1', 11046), ('0', 3425)]
+   label_test_counter:  [('1', 394), ('0', 394)]
+   label_eval_counter:  [('1', 66), ('0', 66)]
+ 
+  CPC_131072:
+   seq_for_item: 1
+   seq_key: seq
+   label_key: label
+   eval_task: classification
+   data_split: ['train', 'test', 'eval']
+   sample_num:  3825
+   min_length:  131072
+   max_length:  131072
+   dataset_ratio:  [0.94, 0.05, 0.01]
+   label_train_counter:  [('1', 2754), ('0', 851)]
+   label_test_counter:  [('1', 94), ('0', 94)]
+   label_eval_counter:  [('1', 16), ('0', 16)]
+ 
+  CPC_1024000:
+   seq_for_item: 1
+   seq_key: seq
+   label_key: label
+   eval_task: classification
+   data_split: ['train', 'test', 'eval']
+   sample_num:  498
+   min_length:  1024000
+   max_length:  1024000
+   dataset_ratio:  [0.94, 0.05, 0.01]
+   label_train_counter:  [('1', 354), ('0', 114)]
+   label_test_counter:  [('1', 13), ('0', 13)]
+   label_eval_counter:  [('1', 2), ('0', 2)]
+ 
+  HPRC_1024:
+   seq_for_item: 1
+   seq_key: seq
+   label_key: label
+   eval_task: classification
+   data_split: ['train', 'test', 'eval']
+   sample_num:  246790
+   min_length:  1024
+   max_length:  1024
+   dataset_ratio:  [0.89, 0.1, 0.02]
+   label_train_counter:  [('1', 109211), ('0', 109211)]
+   label_test_counter:  [('1', 12174), ('0', 12174)]
+   label_eval_counter:  [('1', 2010), ('0', 2010)]
+ 
+  HPRC_8192:
+   seq_for_item: 1
+   seq_key: seq
+   label_key: label
+   eval_task: classification
+   data_split: ['train', 'test', 'eval']
+   sample_num:  30550
+   min_length:  8192
+   max_length:  8192
+   dataset_ratio:  [0.88, 0.1, 0.02]
+   label_train_counter:  [('1', 13518), ('0', 13518)]
+   label_test_counter:  [('1', 1506), ('0', 1506)]
+   label_eval_counter:  [('1', 251), ('0', 251)]
+ 
+  HPRC_32768:
+   seq_for_item: 1
+   seq_key: seq
+   label_key: label
+   eval_task: classification
+   data_split: ['train', 'test', 'eval']
+   sample_num:  7375
+   min_length:  32768
+   max_length:  32768
+   dataset_ratio:  [0.89, 0.1, 0.01]
+   label_train_counter:  [('1', 3381), ('0', 3189)]
+   label_test_counter:  [('1', 375), ('0', 332)]
+   label_eval_counter:  [('1', 63), ('0', 35)]
+ 
+  HPRC_131072:
+   seq_for_item: 1
+   seq_key: seq
+   label_key: label
+   eval_task: classification
+   data_split: ['train', 'test', 'eval']
+   sample_num:  1926
+   min_length:  131072
+   max_length:  131072
+   dataset_ratio:  [0.89, 0.1, 0.02]
+   label_train_counter:  [('1', 853), ('0', 853)]
+   label_test_counter:  [('1', 94), ('0', 94)]
+   label_eval_counter:  [('1', 16), ('0', 16)]
+
+
+  BloodType:
+   seq_for_item: 2
+   seq_key: ['seq1', 'seq2']
+   label_key: label
+   eval_task: classification
+   data_split: ['train', 'test']
+   classifer_type: "RF"
+   sample_num:  304
+   min_length:  31745
+   max_length:  32027
+   dataset_ratio:  [0.74, 0.26]
+   label_train_counter:  [(0, 70), (1, 63), (2, 15), (3, 78)]
+   label_test_counter:  [(0, 24), (1, 22), (2, 5), (3, 27)]
+   
+  Human_classify_8192:
+    seq_for_item: 1
+    seq_key: seq
+    label_key: label
+    eval_task: classification
+    data_split: ['train', 'test', 'eval']
+    classifer_type: "XGB"
+    sample_num:  28994
+    min_length:  8192
+    max_length:  8192
+    dataset_ratio:  [0.8, 0.1, 0.1]
+    label_train_counter:  [(0, 7768), (1, 7606), (2, 7798)]
+    label_test_counter:  [(0, 972), (1, 970), (2, 974)]
+    label_eval_counter:  [(0, 967), (1, 966), (2, 973)]
+
+  Human_classify_32768:
+    seq_for_item: 1
+    seq_key: seq
+    label_key: label
+    eval_task: classification
+    data_split: ['train', 'test', 'eval']
+    classifer_type: "XGB"
+    sample_num:  29045
+    min_length:  32768
+    max_length:  32768
+    dataset_ratio:  [0.8, 0.1, 0.1]
+    label_train_counter:  [(0, 7865), (1, 7546), (2, 7796)]
+    label_test_counter:  [(0, 989), (1, 964), (2, 972)]
+    label_eval_counter:  [(0, 982), (1, 958), (2, 973)]
+
+  Human_classify_131072:
+    seq_for_item: 1
+    seq_key: seq
+    label_key: label
+    eval_task: classification
+    data_split: ['train', 'test', 'eval']
+    classifer_type: "XGB"
+    sample_num:  29410
+    min_length:  131072
+    max_length:  131072
+    dataset_ratio:  [0.8, 0.1, 0.1]
+    label_train_counter:  [(0, 7918), (1, 7823), (2, 7882)]
+    label_test_counter:  [(0, 992), (1, 979), (2, 986)]
+    label_eval_counter:  [(0, 988), (1, 956), (2, 986)]
+
+  Human_classify_1048576:
+    seq_for_item: 1
+    seq_key: seq
+    label_key: label
+    eval_task: classification
+    data_split: ['train', 'test', 'eval']
+    classifer_type: "XGB"
+    sample_num:  28802
+    min_length:  1048576
+    max_length:  1048576
+    dataset_ratio:  [0.79, 0.09, 0.12]
+    label_train_counter:  [(0, 4507), (1, 10582), (2, 7837)]
+    label_test_counter:  [(0, 392), (1, 1174), (2, 979)]
+    label_eval_counter:  [(0, 784), (1, 1568), (2, 979)]
+
+  MHC_classify:
+    seq_for_item: 1
+    seq_key: seq
+    label_key: label
+    eval_task: classification
+    data_split: ['train', 'test', 'eval']
+    classifer_type: "XGB"
+    sample_num:  18646
+    min_length:  532
+    max_length:  17830
+    dataset_ratio:  [0.8, 0.1, 0.1]
+    label_train_counter:  [(0, 6000), (1, 6000), (2, 2116)]
+    label_test_counter:  [(0, 800), (1, 800), (2, 264)]
+    label_eval_counter:  [(0, 800), (1, 800), (2, 266)]
+
+  MHC_classify_2:
+    seq_for_item: 1
+    seq_key: seq
+    label_key: label
+    eval_task: classification
+    data_split: ['train', 'test']
+    classifer_type: "XGB"
+    sample_num:  8034
+    min_length:  339
+    max_length:  17830
+    dataset_ratio:  [0.8, 0.2]
+    label_train_counter:  [(0, 6236), (1, 126), (2, 64)]
+    label_test_counter:  [(0, 1559), (1, 32), (2, 17)]
+
+  primate_species_classification_1024:
+    seq_for_item: 1
+    seq_key: seq
+    label_key: label
+    eval_task: classification
+    data_split: ['train', 'test', 'eval']
+    classifer_type: "XGB"
+    sample_num:  36000
+    min_length:  1024
+    max_length:  1024
+    dataset_ratio:  [0.67, 0.16, 0.17]
+    label_train_counter:  [(0, 4000), (1, 4000), (2, 4000), (3, 4000), (4, 4000), (5, 4000)]
+    label_test_counter:  [(0, 1000), (1, 1000), (2, 1000), (3, 1000), (4, 1000), (5, 1000)]
+    label_eval_counter:  [(0, 1000), (1, 1000), (2, 1000), (3, 1000), (4, 1000), (5, 1000)]
+
+  primate_species_classification_8192:
+    seq_for_item: 1
+    seq_key: seq
+    label_key: label
+    eval_task: classification
+    data_split: ['train', 'test', 'eval']
+    classifer_type: "XGB"
+    sample_num:  36000
+    min_length:  8192
+    max_length:  8192
+    dataset_ratio:  [0.67, 0.16, 0.17]
+    label_train_counter:  [(0, 4000), (1, 4000), (2, 4000), (3, 4000), (4, 4000), (5, 4000)]
+    label_test_counter:  [(0, 1000), (1, 1000), (2, 1000), (3, 1000), (4, 1000), (5, 1000)]
+    label_eval_counter:  [(0, 1000), (1, 1000), (2, 1000), (3, 1000), (4, 1000), (5, 1000)]
+
+  primate_species_classification_32768:
+    seq_for_item: 1
+    seq_key: seq
+    label_key: label
+    eval_task: classification
+    data_split: ['train', 'test', 'eval']
+    classifer_type: "XGB"
+    sample_num:  36000
+    min_length:  32768
+    max_length:  32768
+    dataset_ratio:  [0.67, 0.16, 0.17]
+    label_train_counter:  [(0, 4000), (1, 4000), (2, 4000), (3, 4000), (4, 4000), (5, 4000)]
+    label_test_counter:  [(0, 1000), (1, 1000), (2, 1000), (3, 1000), (4, 1000), (5, 1000)]
+    label_eval_counter:  [(0, 1000), (1, 1000), (2, 1000), (3, 1000), (4, 1000), (5, 1000)]
+
+  primate_species_classification_131072:
+    seq_for_item: 1
+    seq_key: seq
+    label_key: label
+    eval_task: classification
+    data_split: ['train', 'test', 'eval']
+    classifer_type: "XGB"
+    sample_num:  36000
+    min_length:  131072
+    max_length:  131072
+    dataset_ratio:  [0.67, 0.16, 0.17]
+    label_train_counter:  [(0, 4000), (1, 4000), (2, 4000), (3, 4000), (4, 4000), (5, 4000)]
+    label_test_counter:  [(0, 1000), (1, 1000), (2, 1000), (3, 1000), (4, 1000), (5, 1000)]
+    label_eval_counter:  [(0, 1000), (1, 1000), (2, 1000), (3, 1000), (4, 1000), (5, 1000)]

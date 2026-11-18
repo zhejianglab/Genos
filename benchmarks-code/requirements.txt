@@ -1,0 +1,38 @@
+# Seq Benchmarks dependencies
+# Seq Benchmarks Requirements
+
+# Deep learning framework
+torch>=2.0.0
+transformers>=4.21.0
+
+# Data processing and analysis
+pandas>=1.5.0
+numpy>=1.21.0
+scipy>=1.9.0
+
+# Machine learning
+scikit-learn>=1.1.0
+
+# Visualization
+matplotlib>=3.5.0
+
+# Experiment tracking and monitoring
+wandb>=0.13.0
+
+# Progress bars
+tqdm>=4.64.0
+
+# YAML configuration parsing
+PyYAML>=6.0
+
+# GPU acceleration (select the option matching your CUDA version)
+# For CUDA 11.8 or later, install:
+# torch>=2.0.0+cu118 -f https://download.pytorch.org/whl/torch_stable.html
+
+# For the CPU-only version, install:
+# torch>=2.0.0+cpu -f https://download.pytorch.org/whl/torch_stable.html
+
+# Optional dependencies for specific features
+# jupyter>=1.0.0              # For running notebooks
+# seaborn>=0.11.0             # For enhanced data visualization
+# plotly>=5.0.0               # For interactive visualizations

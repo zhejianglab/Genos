@@ -1,0 +1,113 @@
+# Seq Benchmarks configuration file
+# Comments are supported for improved readability
+
+# Model configuration
+# model_path: "model_path"
+model_name: "model_name"
+
+# If no model path is provided and existing embeddings are used for downstream tasks, specify the model name.
+# model_name: "model_name"
+
+# Path to the dataset feature configuration file
+datasets_feature_path: "benchmarks/datasets_info.yaml"
+
+wandb_report: False
+wandb_project: "mlp"
+wandb_entity: "wandb_entity"
+wandb_online: False
+
+# If no model files are provided and existing embeddings are used for downstream tasks, specify the number of model layers.
+num_layers: 12
+
+# Datasets to evaluate
+eval_datasets:
+  # - demo_coding_vs_intergenomic_seqs
+  # - human_enhancers_cohn
+  # - human_ocr_ensembl
+  # - splice_sites_all
+  # - H3
+  # - H3K36me3
+  # - HPRC_1024
+  # - HPRC_8192
+  # - HPRC_32768
+  # - HPRC_131072
+  # - CPC_1024
+  # - CPC_8192
+  # - CPC_32768
+  # - CPC_131072
+  # - regulatory_element_promoter_8K
+  # - regulatory_element_enhancer_8K
+  # - variant_effect_causal_eqtl_8K
+  # - variant_effect_pathogenic_clinvar_8K
+  # - BloodType
+  - Human_classify_8192
+  - Human_classify_32768
+  - Human_classify_131072
+  # - bulk_rna_expression_8K
+
+
+# GPU configuration
+# gpu_list: [0,1]
+layer_to_eval: [12]
+
+
+# Random seed
+seed: 42
+
+
+# Embedding extraction
+embedding_output_dir: "embedding_path"
+# Number of samples per embedding extraction split
+embedding_extract_split: 50000
+batch_size: 8
+
+# Results output directory
+eval_result_path: "results_path"
+
+# Dataset directory
+dataset_path: "Benchmark_Datasets_path"
+
+# Classifier type
+classifer_type: "MLP"
+
+# How to combine embeddings from multiple sequences with one label, such as diploid or family data (1: concatenate, e.g., 2x1024 -> 1x2048; 0: mean pool, e.g., nx1024 -> 1024)
+pooled_embeddings_cat_dim: 1
+
+# Task scheduling
+# Total task weight allowed on each GPU
+process_power_per_gpu: 5
+# Weight assigned to each embedding extraction task
+embedding_process_power: 4
+# Weight assigned to each evaluation task
+eval_process_power: 1
+
+# MLP configuration
+mlp_dropout: 0.2
+mlp_lr: 0.0001
+mlp_epochs: 100
+save_last_epoch_model: False
+# Random forest configuration
+rf_n_estimators: 100
+# XGBoost configuration
+xgb_n_estimators: 100
+xgb_eval_metric: 'mlogloss'
+xgb_learning_rate: 0.1
+xgb_max_depth: 6
+
+# Report generation
+# Classification or label metrics: ["accuracy", "roc_auc", "precision", "recall", "f1", "mcc"]
+# Regression metrics: ["r2", "pearsonr", "spearmanr"]
+# Select the best results for each dataset. For one metric, return all results from the layer with the best value. For multiple metrics, select the best value for each metric across layers. A table is generated.
+target_best_table:
+  - "accuracy"
+  - "roc_auc"
+  - ["roc_auc", "accuracy"]
+  - "pearsonr"
+
+# Plot metrics by layer. For one metric, plot that metric. For multiple metrics, the first is the primary metric and determines the best layer; report the remaining metrics in the legend for that layer.
+target_layer_line_figure:
+  - ["roc_auc", "accuracy"]
+  - ["accuracy", "roc_auc"]
+  - "pearsonr"
+
+
